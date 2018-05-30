@@ -2,6 +2,7 @@
 namespace GMap.NET.WindowsPresentation
 {
     using System.Collections.Generic;
+    using System.Windows.Media;
     using System.Windows.Shapes;
 
     public interface IShapable
@@ -13,10 +14,13 @@ namespace GMap.NET.WindowsPresentation
     {
         public readonly List<PointLatLng> Points = new List<PointLatLng>();
 
-        public GMapRoute(IEnumerable<PointLatLng> points)
+        public GMapRoute(int id, IEnumerable<PointLatLng> points, Color color, int thickness, int zindex)
         {
+            ID = id;
             Points.AddRange(points);
             RegenerateShape(null);
+            Shape= new Path() { Stroke = new SolidColorBrush(color), StrokeThickness = thickness };
+            ZIndex = zindex;
         }
 
         public override void Clear()

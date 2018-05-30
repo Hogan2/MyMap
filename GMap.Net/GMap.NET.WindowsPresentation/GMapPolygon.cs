@@ -2,15 +2,19 @@
 namespace GMap.NET.WindowsPresentation
 {
     using System.Collections.Generic;
+    using System.Windows.Media;
     using System.Windows.Shapes;
 
     public class GMapPolygon : GMapMarker, IShapable
     {
         public readonly List<PointLatLng> Points = new List<PointLatLng>();
 
-        public GMapPolygon(IEnumerable<PointLatLng> points)
+        public GMapPolygon(int id, IEnumerable<PointLatLng>points, Color color, int thickness, int zindex)
         {
+            ID = id;
             Points.AddRange(points);
+            Shape = new Path() { Stroke = new SolidColorBrush(color), StrokeThickness = thickness };
+            ZIndex = zindex;
             RegenerateShape(null);
         }
 
