@@ -68,7 +68,7 @@ namespace GMap.NET.Internals
         FastResourceLock pLock;
 #endif
 
-        static readonly bool UseNativeSRWLock = Stuff.IsRunningOnVistaOrLater() && IntPtr.Size == 4; // works only in 32-bit mode, any ideas on native 64-bit support? 
+        static readonly bool UseNativeSRWLock = Stuff.IsRunningOnWin10orLater() && IntPtr.Size == 4; // works only in 32-bit mode, any ideas on native 64-bit support? 
 
 #endif
 
