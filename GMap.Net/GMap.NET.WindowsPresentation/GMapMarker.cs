@@ -186,7 +186,7 @@ namespace GMap.NET.WindowsPresentation
 
         public int ID { get; set; }
 
-        public GMapMarker(int id, PointLatLng pos, Point offsetpoint, UIElement markershape, int zindex)
+        public GMapMarker(int id, PointLatLng pos, Point offsetpoint, UIElement markershape, double angle, int zindex)
         {
             ID = id;
             Position = pos;

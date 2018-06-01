@@ -13,8 +13,8 @@ namespace MapTest.Views
         public MapTestView()
         {
             InitializeComponent();
-            GMapCtrl.CacheLocation = @"D:\LOG\ProgramFiles\MapDownloader\MapCache"; //@"D:\LOG\CODE\MapDB"
-            GMapCtrl.MapProvider = GMapProviders.AMapSateliteMap;
+            GMapCtrl.CacheLocation = @"D:\LOG\CODE\MapDB"; //@""D:\LOG\ProgramFiles\MapDownloader\MapCache
+            GMapCtrl.MapProvider = GMapProviders.GoogleChinaSatelliteMap;
 
             GMapCtrl.Manager.Mode = AccessMode.CacheOnly;
             GMapCtrl.Position = new PointLatLng(30.6898, 103.9468);            
